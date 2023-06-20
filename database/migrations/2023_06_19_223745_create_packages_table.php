@@ -19,7 +19,7 @@ return new class extends Migration
             $table->float('price');
             $table->integer('max_days');
             $table->integer('max_users');
-            $table->boolean('is_donwload');
+            $table->boolean('is_download');
             $table->boolean('is_4k');
             $table->timestamps();
         });
