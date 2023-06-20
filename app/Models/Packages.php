@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Packages extends Model
 {
     use HasFactory;
+
+    protected $table = 'Packages';
+
+    protected  $fillable = [
+        'name',
+        'price',
+        'max_days',
+        'max_users',
+        'is_download',
+        'is_4k',
+    ];
 }
