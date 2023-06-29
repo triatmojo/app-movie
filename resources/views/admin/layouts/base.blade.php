@@ -1,117 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Stream | @yield('title')</title>
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="{{ asset('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="{{ asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.css') }}">
 
-  <!-- DataTables -->
-  <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="{{ asset('stisla/modules/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('stisla/modules/fontawesome/css/all.min.css') }}">
 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="{{ asset('stisla/modules/datatables/datatables.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('stisla/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('stisla/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('stisla/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('stisla/modules/bootstrap-daterangepicker/daterangepicker.css') }}">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
-  {{-- navbar here --}}
-  @include('admin.layouts.navbar')
-  
-  {{-- sidebar here --}}
-  @include('admin.layouts.sidebar')
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">@yield('title')</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        @yield('content')
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-
-  {{-- footer here --}}
-  @include('admin.layouts.footer')
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{{ asset('stisla/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('stisla/css/components.css') }}">
+<!-- Start GA -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-94034622-3');
 </script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- Select2 -->
-<script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{ asset('adminlte/plugins/moment/moment.min.js')}}"></script>
-<script src="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-<!-- overlayScrollbars -->
-<script src="{{ asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
+<!-- /END GA --></head>
 
-<!-- DataTables  & Plugins -->
-<script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/jszip/jszip.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/pdfmake/pdfmake.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/pdfmake/vfs_fonts.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+<body>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+    {{-- Navbar --}}
+    @include('admin.layouts.navbar')
+    
+    {{-- Sidebar  --}}
+    @include('admin.layouts.sidebar')
 
-@yield('js')
+      <!-- Main Content -->
+      <div class="main-content">
+          <section class="section">
+              <div class="section-header">
+                  <h1>@yield('title')</h1>
+              </div>
+            {{-- Content --}}
+            @yield('content')
+        </section>
+      </div>
+      {{-- Footer --}}
+      @include('admin.layouts.footer')
+    </div>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="{{ asset('stisla/modules/jquery.min.js') }}"></script>
+  <script src="{{ asset('stisla/modules/popper.js') }}"></script>
+  <script src="{{ asset('stisla/modules/tooltip.js') }}"></script>
+  <script src="{{ asset('stisla/modules/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('stisla/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
+  <script src="{{ asset('stisla/modules/moment.min.js') }}"></script>
+  <script src="{{ asset('stisla/js/stisla.js') }}"></script>
+  
+  <!-- JS Libraies -->
+  <script src="{{ asset('stisla/modules/datatables/datatables.min.js') }}"></script>
+  <script src="{{ asset('stisla/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('stisla/modules/datatables/Select-1.2.4/js/dataTables.select.min.js') }}"></script>
+  <script src="{{ asset('stisla/modules/jquery-ui/jquery-ui.min.js') }}"></script>
+  <script src="{{ asset('stisla/modules/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="{{ asset('stisla/js/page/modules-datatables.js') }}"></script>
+
+  @yield('js')
+  
+  <!-- Template JS File -->
+  <script src="{{ asset('stisla/js/scripts.js') }}"></script>
+  <script src="{{ asset('stisla/js/custom.js') }}"></script>
+<!-- Code injected by live-server -->
 
 </body>
 </html>
