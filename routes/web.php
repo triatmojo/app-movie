@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\Admin\TransactionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,13 @@ use App\Http\Controllers\Admin\TransactionController;
 |
 */
 
-Route::group(['prefix' => 'admin'], function () {
+Route::get('admin/login', [LoginController::class, 'index'])->name('admin.login');
+Route::post('admin/login', [LoginController::class, 'autheticate'])->name('admin.login.auth');
+
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function () {
     Route::view('/', 'admin.dashboard')->name('admin.dashboard');
+
+    Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');
 
     Route::get('transaction', [TransactionController::class, 'index'])->name('admin.transaction');
 
