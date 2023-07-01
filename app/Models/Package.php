@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Packages extends Model
+class Package extends Model
 {
     use HasFactory;
 
@@ -19,4 +19,5 @@ class Packages extends Model
         'is_download',
         'is_4k',
     ];
+
 }

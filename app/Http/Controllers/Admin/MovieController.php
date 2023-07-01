@@ -89,7 +89,6 @@ class MovieController extends Controller
             // delete old image
             if(Storage::exists('public/thumbnail/'.$movie->small_thumbnail)) {
                 Storage::delete('public/thumbnail/'.$movie->small_thumbnail);
-                dd('File is deleted!');
             }
         }
 
