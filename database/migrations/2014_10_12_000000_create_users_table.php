@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('phone_number');
-            $table->string('avatar');
+            $table->string('avatar')->nullable();
             $table->enum('role', ['admin', 'member']);
             $table->rememberToken();
             $table->softDeletes();
