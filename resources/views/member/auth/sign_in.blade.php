@@ -35,7 +35,7 @@
             <div class="pt-[30px] relative">
                 <!-- Logo -->
                 <div class=" flex flex-row justify-center items-center">
-                    <a href="/index.html" class="block">
+                    <a href="{{ route('member.index')}}" class="block">
                         <img src="{{ asset('stream/assets/images/stream.svg') }}" alt="stream" />
                     </a>
                 </div>
@@ -71,7 +71,7 @@
                                     name="password"
                                     class="rounded-full py-3 pr-3 pl-6 text-stream-dark placeholder:text-stream-gray placeholder:font-normal font-medium outline-stream-gray outline outline-1 text-base focus:outline-indigo-600 input-stream"
                                     placeholder="Your password" />
-                                @error('password')
+                                @error('credentials')
                                     <div style="color: red">
                                         {{ $message }}
                                     </div>
